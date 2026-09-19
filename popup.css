@@ -1,0 +1,120 @@
+
+@font-face {
+  font-family: 'Jersey10';
+  src: url('assets/Jersey10.ttf') format('truetype');
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 264px;
+  margin: 0;
+  background: #080808;
+  color: #d8ded3;
+  font-family: 'Jersey10', 'Trebuchet MS', Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.win { border: 1px solid #000; }
+
+.titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 8px;
+  background: #212121;
+  border-top: 1px solid #3a3a3a;
+  border-bottom: 2px solid #000;
+}
+.title { color: #F0B43F; letter-spacing: 0.5px; }
+.ver { color: #888888; font-size: 13px; }
+
+.body { padding: 8px; }
+
+.section-label {
+  color: #F0B43F;
+  font-size: 13px;
+  text-transform: lowercase;
+  margin: 10px 0 4px;
+  border-bottom: 1px solid #2e2e2e;
+  padding-bottom: 2px;
+}
+.section-label:first-child { margin-top: 0; }
+
+.muted { color: #9aa394; }
+.hint { font-size: 13px; margin-bottom: 6px; color: #a8b0a3; }
+
+.relay-row { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.relay-row .muted { color: #a8b0a3; }
+
+.dot {
+  width: 8px; height: 8px;
+  display: inline-block;
+  flex: none;
+  background: #2e2e2e;
+  border: 1px solid #000;
+}
+.dot.on { background: #5aa75a; }
+
+/* Long rosters scroll inside the box instead of pushing the status line and
+   the buttons off the bottom of the popup. */
+.plist { max-height: 270px; overflow-y: auto; margin: 6px 0; }
+.plist::-webkit-scrollbar { width: 8px; }
+.plist::-webkit-scrollbar-thumb { background: #3a3a3a; }
+.plist::-webkit-scrollbar-track { background: #0c0c0c; }
+
+.platform-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0;
+}
+.platform-name { flex: 1; }
+.session { font-size: 12px; color: #b08540; }
+.session.on { color: #5aa75a; }
+
+.btn {
+  font-family: inherit;
+  font-size: 14px;
+  color: #d8ded3;
+  background: #212121;
+  border-top: 1px solid #3a3a3a;
+  border-left: 1px solid #3a3a3a;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+.btn:hover:not(:disabled) { background: #2e2e2e; }
+.btn:active:not(:disabled) {
+  border-top-color: #000; border-left-color: #000;
+  border-bottom-color: #3a3a3a; border-right-color: #3a3a3a;
+}
+.btn:disabled { color: #555; cursor: default; }
+.btn.busy { color: #F0B43F; }
+
+.input {
+  width: 100%;
+  margin-top: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #d8ded3;
+  background: #0c0c0c;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #3a3a3a;
+  border-right: 1px solid #3a3a3a;
+  padding: 4px 6px;
+  outline: none;
+}
+.input::placeholder { color: #6f7869; }
+.input:focus { color: #F0B43F; }
+
+.status { min-height: 16px; margin: 6px 0; font-size: 13px; }
+.status.muted { color: #a8b0a3; }
+.status.err { color: #e03644; }
+.status.ok { color: #5aa75a; }
+
+.row { display: flex; gap: 6px; }
+.row .btn { flex: 1; }

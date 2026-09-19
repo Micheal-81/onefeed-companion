@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>onefeed companion</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="win">
+    <div class="titlebar">
+      <span class="title">onefeed companion</span>
+      <span class="ver" id="ver"></span>
+    </div>
+    <div class="body">
+
+      <div class="section-label">feed relay</div>
+      <div class="relay-row">
+        <span class="dot on"></span>
+        <span class="muted">ready. onefeed.online can fetch through this browser</span>
+      </div>
+
+      <div class="section-label">import your follows</div>
+      <div class="muted hint">click open, then click import. the list copies itself. paste it into the red box on onefeed.</div>
+
+      <div class="status muted" id="status"></div>
+
+      <input id="arg-input" class="input" type="text" maxlength="60"
+             placeholder="handle or id (only when a button asks for one)" autocomplete="off" spellcheck="false">
+
+      <div id="platforms" class="plist"></div>
+
+      <div class="row">
+        <button id="copy" class="btn" disabled>copy handles</button>
+        <button id="open" class="btn">open onefeed</button>
+      </div>
+
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
